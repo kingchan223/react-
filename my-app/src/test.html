@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //<!-- concat, filter, map, slice, 스프레드 연산자. -->
+
+        console.log("1.======스프레드 연산자=====")
+        const a = [1, 2, 3];
+        const b = [...a];//깊은 복사 (배열)
+        console.log(b);
+        b.push(4);
+        console.log('a의 값은 :${a}')
+        console.log('b의 값은 :${b}')
+        
+        //+ 응용
+        const c = [...a,4]; // [1, 2, 3, 4]
+        
+
+        console.log("2.===concat===추가하기=====")//추가할 때 쓴다. 
+        const a2 = [1, 2, 3];
+        const b2 = a2.concat(4); // a2에 4를 추가한 후, 깊은 복사
+        console.log('a1의 값은 :${a1}')
+        console.log('b2의 값은 :${b2}')
+
+        console.log("3.===filter===걸러내기=====")//삭제할때 주로 쓴다.
+        const a3 = [1, 2, 3];
+        const b3 = a3.filter((n)=>{return n!=1;});//bool을 return 받는다. -> true만 걸러낸다.
+        console.log(b3) // [2, 3]
+
+        
+        console.log("4.===slice===잘라내기=====")
+        const a4 = [1, 2, 3];
+        const b4 = a4.slice(0,2) // [1, 2]
+        const c4 = [a4.slice(0,2)] //[[1, 2]]
+        const d4 = [...a4.slice(0,2)] // [1, 2]
+        const e4 = [...a4.slice(0,2), 4, ...a4.slice(2, 3)] // [1, 2, 4, 3] --> 데이터를 중간에 삽입하기 위해선 slice를 사용
+
+
+        console.log("5.===map===반복하기=====")
+        const a5 = [1, 2, 3];
+        a5.forEach((n)=> {console.log(n);}); //리턴을 못한다.
+        const b5 = a5.map((n)=>n); // [1, 2, 3] 리턴이 된다. [...a5]의 결과와 같다.
+        //+ map은 가공이 가능하다.
+        const c5 = a5.map((n)=>n+10); // [11, 12, 13]
+
+
+        const a6 = {id:1, name:"누군가", phone:"010-2323-2323"};
+        const b6 = {...a6}; // 오브젝트 깊은 복사
+        //이름 바꾸기
+        const c6 = {...a6, name:"탄지로"};//같은 건 뒤에서 덮어쓴다. 이름만 '탄지로'로 바뀜
+
+        // + 적용해보기
+        const users = [
+            {id:1, name:"누군가", phone:"010-23-23"},
+            {id:2, name:"아무나", phone:"010-99-88"},
+            {id:3, name:"그사람", phone:"010-11-22"},
+        ]
+        console.log(users);
+
+        //아래의 데이터로 회원정보변경 요청
+        const updateUserDto = {
+            id:2, name:"탄지로"
+        }
+        const changedUsers = users.map(
+            (user)=>user.id===updateUserDto.id ? {...user, ...updateUserDto} : user
+            );
+        console.log(changedUsers);
+        
+
+
+    </script>
+</body>
+</html>
