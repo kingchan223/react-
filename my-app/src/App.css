@@ -1,3 +1,8 @@
 .app-style {
   color: blue;
 }
+
+.box-style {
+  color: blue;
+  background-color: bisque;
+}
