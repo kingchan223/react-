@@ -1,8 +1,11 @@
-.app-style {
-  color: blue;
+.container {
+  height: 700;
+  border: 2px solid black;
 }
-
-.box-style {
-  color: blue;
-  background-color: bisque;
+.sub_container {
+  height: 250;
+  border: 2px solid black;
+}
+div {
+  padding: 20px;
 }

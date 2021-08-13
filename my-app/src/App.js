@@ -1,12 +1,14 @@
-//글쓰기, 글삭제, 글목록보기 만들어보쟈
-
-import { Route } from 'react-router-dom';
-import ListPage from './pages/ListPage';
+import './App.css';
+import React, { useState } from 'react';
+import Top from './components/Top';
+import Bottom from './components/Bottom';
 
 function App() {
   return (
-    <div>
-      <ListPage />
+    <div className="container">
+      <h1>최상단 화면</h1>
+      <Top />
+      <Bottom />
     </div>
   );
 }

@@ -33,16 +33,10 @@ const ListPage = () => {
     setPosts([...posts, { ...post, id: post.id + 1 }]);
     setPost({ ...post, id: post.id + 1 });
   };
+
   const handleDelete = (id) => {
     setPosts(posts.filter((post) => post.id !== id));
   };
-  //   const handleChangeTitle = (e) => {
-  //     setPost({ title: e.target.value });
-  //   };
-
-  //   const handleChangeContent = (e) => {
-  //     setPost({ content: e.target.value });
-  //   };
 
   const handleForm = (e) => {
     //computed property names (키 값 동적 할당)
