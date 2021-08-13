@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Home from '../components/home/Home';
+import Footer from '../practice_components/Footer';
+import Header from '../practice_components/Header';
+import Home from '../practice_components/practice_home/Home';
 
 //데이터 다운은 되도록이면 페이지에서 받자.
 const HomePage = () => {

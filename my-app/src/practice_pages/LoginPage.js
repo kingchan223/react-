@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from '../components/login/Login';
+import Login from '../practice_components/practice_login/Login';
 
 const LoginPage = (props) => {
   console.log('LoginPage', props);
